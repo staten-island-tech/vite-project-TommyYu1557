@@ -1,7 +1,7 @@
 import "./style.css";
-import { menu } from "./menu";
+import "./seals";
 import javascriptLogo from "./javascript.svg";
-import { setupCounter } from "../counter.js";
+import { setupCounter } from "./counter.js";
 
 document.querySelector("#app").innerHTML = `
   <div>
