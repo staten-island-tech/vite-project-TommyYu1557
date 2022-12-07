@@ -2,6 +2,7 @@ import "./style";
 import "./seals";
 import javascriptLogo from "./javascript.svg";
 import { setupCounter } from "./counter.js";
+import { seals } from "./seals";
 
 document.querySelector("#app").innerHTML = `
   <div>
@@ -20,5 +21,59 @@ document.querySelector("#app").innerHTML = `
     </p>
   </div>
 `;
+
+function sealprice1 {
+  seals
+    .filter((seal) => seal.price >= 2500)
+    .forEach((seal) => console.log(seal.value));
+}
+
+insertfunctionname {
+  seals
+    .filter((seal) => seal.price < 2500)
+    .forEach((seal) => console.log(seal.value));
+}
+
+insertfunctionname {
+  seals
+    .filter((seal) => seal.age >= 13)
+    .forEach((seal) => console.log(seal.age));
+}
+
+insertfunctionname {
+  seals
+    .filter((seal) => seal.age < 13)
+    .forEach((seal) => console.log(seal.age));
+}
+
+insertfunctionname {
+  seals
+    .filter((seal) => seal.age < 13)
+    .forEach((seal) => console.log(seal.age));
+}
+
+insertfunctionname {
+  seals
+    .filter((seal) => seal.weight < 300)
+    .forEach((seal) => console.log(seal.weight));
+}
+
+insertfunctionname {
+  seals
+    .filter((seal) => seal.weight >= 300)
+    .forEach((seal) => console.log(seal.weight));
+}
+
+insertfunctionname {
+  seals
+    .filter((seal) => seal.hostile === "yes")
+    .forEach((seal) => console.log(seal.hostile));
+}
+
+insertfunctionname {
+  seals
+    .filter((seal) => seal.hostile === "no")
+    .forEach((seal) => console.log(seal.hostile));
+}
 
 setupCounter(document.querySelector("#counter"));
