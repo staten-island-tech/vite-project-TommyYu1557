@@ -22,16 +22,18 @@ document.querySelector("#app").innerHTML = `
   </div>
 `;
 
-function sealprice1 {
+function value1(expensive) {
   seals
     .filter((seal) => seal.price >= 2500)
-    .forEach((seal) => console.log(seal.value));
+    .forEach((seal) => console.log(seal.value))
+     console.log(expensive)
 }
 
-insertfunctionname {
+function value2(cheap) {
   seals
     .filter((seal) => seal.price < 2500)
     .forEach((seal) => console.log(seal.value));
+     console.log(cheap)
 }
 
 insertfunctionname {
@@ -75,5 +77,8 @@ insertfunctionname {
     .filter((seal) => seal.hostile === "no")
     .forEach((seal) => console.log(seal.hostile));
 }
+
+const hamburger = seal.weight.map((yumme) => yumme * 1.5);
+console.log(hamburger);
 
 setupCounter(document.querySelector("#counter"));
