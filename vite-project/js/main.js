@@ -1,7 +1,12 @@
 import "../styles/style.css";
 import "./seals";
+import "./dom";
 import { setupCounter } from "./counter.js";
 import { seals } from "./seals";
+
+document.querySelector("button1").addEventListener("click", function () {
+  document.body.classList.add("warm");
+});
 
 console.log("======================Expensive Seals======================");
 seals

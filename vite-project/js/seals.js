@@ -119,5 +119,16 @@ const seals = [
     value: 1450,
     stock: 1,
   },
+  {
+    names:
+      "Lord Chonkieur Snorfington IV, the Supreme Chonk - Heir of the Chonkiest",
+    age: 3,
+    weight: 400,
+    gender: "male",
+    hostile: "no",
+    species: "rareseal",
+    value: 9001,
+    stock: 1,
+  },
 ];
 export { seals };
