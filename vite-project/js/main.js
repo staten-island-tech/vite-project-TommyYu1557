@@ -4,8 +4,14 @@ import "./dom";
 import { setupCounter } from "./counter.js";
 import { seals } from "./seals";
 
-document.querySelector("button1").addEventListener("click", function () {
+document.querySelector(".button1").addEventListener("click", function () {
   document.body.classList.add("warm");
+  document.body.classList.remove("cool");
+});
+
+document.querySelector(".button2").addEventListener("click", function () {
+  document.body.classList.add("cool");
+  document.body.classList.remove("warm");
 });
 
 console.log("======================Expensive Seals======================");
