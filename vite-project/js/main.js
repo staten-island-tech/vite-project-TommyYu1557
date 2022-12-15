@@ -5,14 +5,21 @@ import { setupCounter } from "./counter.js";
 import { seals } from "./seals";
 
 document.querySelector(".button1").addEventListener("click", function () {
-  document.body.classList.add("warm");
-  document.body.classList.remove("cool");
+  if (document.body.classList.contains("cool")) {
+    document.body.classList.add("warm");
+    document.body.classList.remove("cool");
+  } else {
+    document.body.classList.remove("warm");
+    document.body.classList.add("cool");
+  }
 });
 
-document.querySelector(".button2").addEventListener("click", function () {
-  document.body.classList.add("cool");
-  document.body.classList.remove("warm");
-});
+function profile() {
+  DOMselectors.profile.insertAdjacentHTML(
+    "beforeend",
+    `<div class = "profile"> <p>${input1}</p> <p><img src= ${img} class="imgView"></p> <p>${input2}</p>  <button class="tempBtn">Delete</button></div>`
+  );
+}
 
 console.log("======================Expensive Seals======================");
 seals
