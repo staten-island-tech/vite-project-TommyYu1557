@@ -14,6 +14,12 @@ document.querySelector(".button1").addEventListener("click", function () {
   }
 });
 
+document.querySelector(".price").addEventListener("click", function () {
+  seals
+    .filter((seal) => seal.value >= 2500)
+    .forEach((seal) => console.log(seal.names));
+});
+
 function profile() {
   DOMselectors.profile.insertAdjacentHTML(
     "beforeend",

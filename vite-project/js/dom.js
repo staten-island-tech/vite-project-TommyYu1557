@@ -7,3 +7,5 @@ const DOMselectors = {
   holder: document.querySelector(".holder"),
   card: document.querySelector(".card"),
 };
+
+export { dom };
