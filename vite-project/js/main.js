@@ -1,6 +1,7 @@
 import "../styles/style.css";
 import "./seals";
 import "./dom";
+import { DOMselectors } from "./dom";
 import { setupCounter } from "./counter.js";
 import { seals } from "./seals";
 
@@ -20,12 +21,42 @@ document.querySelector(".price").addEventListener("click", function () {
     .forEach((seal) => console.log(seal.names));
 });
 
-function profile() {
-  DOMselectors.profile.insertAdjacentHTML(
-    "beforeend",
-    `<div class = "profile"> <p>${input1}</p> <p><img src= ${img} class="imgView"></p> <p>${input2}</p>  <button class="tempBtn">Delete</button></div>`
+document.querySelector(".age").addEventListener("click", function () {
+  seals
+    .filter((seal) => seal.age >= 10)
+    .forEach((seal) => console.log(seal.names));
+});
+
+document.querySelector(".weight").addEventListener("click", function () {
+  seals
+    .filter((seal) => seal.weight >= 300)
+    .forEach((seal) => console.log(seal.names));
+});
+
+document.querySelector(".angry").addEventListener("click", function () {
+  seals
+    .filter((seal) => seal.hostile === "yes")
+    .forEach((seal) => console.log(seal.names));
+});
+
+seals.forEach((seal) => {
+  DOMselectors.card.insertAdjacentHTML(
+    "afterbegin",
+    `<div class="sealcard"> 
+    <h2 class="sealcardname"> ${seal.names} </h2>
+    <img
+     src="${seal.img}">
+     <p> Age: ${seal.age} </p>
+     <p> Weight: ${seal.weight}lbs </p>
+     <p> Gender: ${seal.gender} </p>
+     <p> Angry? ${seal.hostile} </p>
+     <p> Stock: ${seal.stock} </p>
+     <h3 class="sealcardprice"> $${seal.value}</h3>
+    </div>`
   );
-}
+});
+
+/// // placeholder console loggings// ///
 
 console.log("======================Expensive Seals======================");
 seals
@@ -68,6 +99,8 @@ seals
   .filter((seal) => seal.hostile === "no")
   .forEach((seal) => console.log(seal.names));
 console.log("=======================After Burger Seals=====================");
+/// // the great divider // ///
+
 const hamburger = seals.weight.map((yumme) => yumme * 1.5);
 console.log(hamburger);
 
