@@ -141,7 +141,7 @@ const seals = [
     species: "rareseal",
     value: 9001,
     stock: 1,
-    img: "https://th.bing.com/th/id/R.4cbf6e7887e0831034ee965c0fffc876?rik=NZQyScN7eWGhvA&riu=http%3a%2f%2fwww.emoji.co.uk%2ffiles%2ftwitter-emojis%2fsmileys-people-twitter%2f10521-weary-face.png&ehk=FWto7zH%2bpjN0sp7MB4492BaJpMA41MrvSyKvbWVIoWo%3d&risl=&pid=ImgRaw&r=0",
+    img: "http://i.imgur.com/MgBRINH.jpg",
   },
 ];
 export { seals };

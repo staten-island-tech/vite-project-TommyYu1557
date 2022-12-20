@@ -44,14 +44,14 @@ seals.forEach((seal) => {
     "afterbegin",
     `<div class="sealcard"> 
     <h2 class="sealcardname"> ${seal.names} </h2>
-    <img
-     src="${seal.img}">
-     <p> Age: ${seal.age} </p>
-     <p> Weight: ${seal.weight}lbs </p>
-     <p> Gender: ${seal.gender} </p>
-     <p> Angry? ${seal.hostile} </p>
-     <p> Stock: ${seal.stock} </p>
-     <h3 class="sealcardprice"> $${seal.value}</h3>
+    <img class="sealcardimg" src="${seal.img}">
+     <p class ="sealcardtext"> Species: ${seal.species}</p>
+     <p class ="sealcardtext"> Age: ${seal.age} </p>
+     <p class ="sealcardtext"> Weight: ${seal.weight}lbs </p>
+     <p class ="sealcardtext"> Gender: ${seal.gender} </p>
+     <p class ="sealcardtext"> Angry? ${seal.hostile} </p>
+     <p class ="sealcardtext"> Stock: ${seal.stock} </p>
+     <h3 class ="sealcardtext"> $${seal.value}</h3>
     </div>`
   );
 });

@@ -1,3 +1,10 @@
+html, body, *{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-size: 62.5%; /* 100% is 16px, but we want the size to be 10px */
+}
+
 :root {
   font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
   font-size: 16px;
@@ -101,7 +108,10 @@ button:focus-visible {
   display: flex;
   justify-content: space-around;
   width: 100%;
-  margin-bottom: 55.5rem;
+  position: absolute;
+  font-size: 1rem;
+
+  top: 1rem;
 }
 
 .cool {
@@ -116,3 +126,46 @@ button:focus-visible {
   
 }
 
+.sealcard {
+  display: flex;
+  justify-content: space-between;
+  border: .5rem solid rgb(230, 230, 230);
+  border-radius: .7rem;
+  margin-top: 5rem;
+  margin-bottom: 3rem;
+  margin-left: 8rem;
+  margin-right: 8rem;
+  box-shadow: .7rem .7rem .38rem rgb(195, 195, 195);
+  align-items: center;
+  flex-direction: column;
+  width: 45vw;
+  background-color: rgba(245, 245, 220, 0.836);
+}
+
+.sealcardname {
+  padding-left: 6rem;
+  padding-right: 6rem;
+}
+
+.sealcardimg {
+  border: .5rem solid rgb(230, 230, 230);
+  border-radius: .7rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  box-shadow: .7rem .7rem .38rem rgb(195, 195, 195);
+  transition: all 0.25s;
+  width: 50vh;
+  height: 22.5vw;
+}
+
+.sealcardname {
+  margin-top: 1rem;
+  font-size: 2rem;
+  padding-bottom: .2rem;
+}
+
+.sealcardtext {
+  flex-direction: column;
+  font-size: 2rem;
+  padding-bottom: .8rem;
+}
