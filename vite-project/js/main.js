@@ -16,9 +16,13 @@ document.querySelector(".button1").addEventListener("click", function () {
 });
 
 document.querySelector(".price").addEventListener("click", function () {
-  seals
-    .filter((seal) => seal.value >= 2500)
-    .forEach((seal) => console.log(seal.names));
+  if (document.body.classList.contains("sealcard")) {
+    document.body.classList.remove("sealcard");
+    makecardbyprice();
+  } else {
+    document.body.classList.remove("sealcard");
+    makecard();
+  }
 });
 
 document.querySelector(".age").addEventListener("click", function () {
@@ -39,10 +43,20 @@ document.querySelector(".angry").addEventListener("click", function () {
     .forEach((seal) => console.log(seal.names));
 });
 
-seals.forEach((seal) => {
-  DOMselectors.card.insertAdjacentHTML(
-    "afterbegin",
-    `<div class="sealcard"> 
+function poof() {
+  const remove = document.querySelectorAll(".price");
+  remove.forEach((eachRemove) => {
+    eachRemove.addEventListener("click", (event) => {
+      event.target.parentElement.remove();
+    });
+  });
+}
+
+function makecard() {
+  seals.forEach((seal) => {
+    DOMselectors.card.insertAdjacentHTML(
+      "afterbegin",
+      `<div class="sealcard"> 
     <h2 class="sealcardname"> ${seal.names} </h2>
     <img class="sealcardimg" src="${seal.img}">
      <p class ="sealcardtext"> Species: ${seal.species}</p>
@@ -53,8 +67,32 @@ seals.forEach((seal) => {
      <p class ="sealcardtext"> Stock: ${seal.stock} </p>
      <h3 class ="sealcardtext"> $${seal.value}</h3>
     </div>`
-  );
-});
+    );
+  });
+}
+
+function makecardbyprice() {
+  seals
+    .filter((seal) => seal.value >= 2500)
+    .forEach((seal) => {
+      DOMselectors.card.insertAdjacentHTML(
+        "afterbegin",
+        `<div class="sealcard"> 
+    <h2 class="sealcardname"> ${seal.names} </h2>
+    <img class="sealcardimg" src="${seal.img}">
+     <p class ="sealcardtext"> Species: ${seal.species}</p>
+     <p class ="sealcardtext"> Age: ${seal.age} </p>
+     <p class ="sealcardtext"> Weight: ${seal.weight}lbs </p>
+     <p class ="sealcardtext"> Gender: ${seal.gender} </p>
+     <p class ="sealcardtext"> Angry? ${seal.hostile} </p>
+     <p class ="sealcardtext"> Stock: ${seal.stock} </p>
+     <h3 class ="sealcardtext"> $${seal.value}</h3>
+    </div>`
+      );
+    });
+}
+
+makecard();
 
 /// // placeholder console loggings// ///
 
