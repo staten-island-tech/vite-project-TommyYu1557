@@ -15,41 +15,37 @@ document.querySelector(".button1").addEventListener("click", function () {
   }
 });
 
+document.querySelector(".default").addEventListener("click", function () {
+  DOMselectors.card.innerHTML = ``;
+  makecard();
+});
+
 document.querySelector(".price").addEventListener("click", function () {
-  if (document.body.classList.contains("sealcard")) {
-    document.body.classList.remove("sealcard");
-    makecardbyprice();
-  } else {
-    document.body.classList.remove("sealcard");
-    makecard();
-  }
+  DOMselectors.card.innerHTML = ``;
+  DOMselectors.price.innerHTML = `CURRENT`;
+  makecardbyprice();
 });
 
 document.querySelector(".age").addEventListener("click", function () {
-  seals
-    .filter((seal) => seal.age >= 10)
-    .forEach((seal) => console.log(seal.names));
+  DOMselectors.card.innerHTML = ``;
+  makecardbyage();
 });
 
 document.querySelector(".weight").addEventListener("click", function () {
-  seals
-    .filter((seal) => seal.weight >= 300)
-    .forEach((seal) => console.log(seal.names));
+  DOMselectors.card.innerHTML = ``;
+  makecardbyweight();
 });
 
 document.querySelector(".angry").addEventListener("click", function () {
-  seals
-    .filter((seal) => seal.hostile === "yes")
-    .forEach((seal) => console.log(seal.names));
+  DOMselectors.card.innerHTML = ``;
+  makecardbyangry();
 });
 
-function poof() {
-  const remove = document.querySelectorAll(".price");
-  remove.forEach((eachRemove) => {
-    eachRemove.addEventListener("click", (event) => {
-      event.target.parentElement.remove();
-    });
-  });
+function resetbuttonname() {
+  DOMselectors.price.innerHTML = `Sort by $$$`;
+  DOMselectors.age.innerHTML = `Sort by Age`;
+  DOMselectors.weight.innerHTML = `Sort by Weight`;
+  DOMselectors.angry.innerHTML = `Sort by Angery`;
 }
 
 function makecard() {
@@ -71,9 +67,72 @@ function makecard() {
   });
 }
 
+function makecardbyage() {
+  seals
+    .filter((seal) => seal.age >= 10)
+    .forEach((seal) => {
+      DOMselectors.card.insertAdjacentHTML(
+        "afterbegin",
+        `<div class="sealcard"> 
+    <h2 class="sealcardname"> ${seal.names} </h2>
+    <img class="sealcardimg" src="${seal.img}">
+     <p class ="sealcardtext"> Species: ${seal.species}</p>
+     <p class ="sealcardtext"> Age: ${seal.age} </p>
+     <p class ="sealcardtext"> Weight: ${seal.weight}lbs </p>
+     <p class ="sealcardtext"> Gender: ${seal.gender} </p>
+     <p class ="sealcardtext"> Angry? ${seal.hostile} </p>
+     <p class ="sealcardtext"> Stock: ${seal.stock} </p>
+     <h3 class ="sealcardtext"> $${seal.value}</h3>
+    </div>`
+      );
+    });
+}
+
 function makecardbyprice() {
   seals
     .filter((seal) => seal.value >= 2500)
+    .forEach((seal) => {
+      DOMselectors.card.insertAdjacentHTML(
+        "afterbegin",
+        `<div class="sealcard"> 
+    <h2 class="sealcardname"> ${seal.names} </h2>
+    <img class="sealcardimg" src="${seal.img}">
+     <p class ="sealcardtext"> Species: ${seal.species}</p>
+     <p class ="sealcardtext"> Age: ${seal.age} </p>
+     <p class ="sealcardtext"> Weight: ${seal.weight}lbs </p>
+     <p class ="sealcardtext"> Gender: ${seal.gender} </p>
+     <p class ="sealcardtext"> Angry? ${seal.hostile} </p>
+     <p class ="sealcardtext"> Stock: ${seal.stock} </p>
+     <h3 class ="sealcardtext"> $${seal.value}</h3>
+    </div>`
+      );
+    });
+}
+
+function makecardbyweight() {
+  seals
+    .filter((seal) => seal.weight >= 300)
+    .forEach((seal) => {
+      DOMselectors.card.insertAdjacentHTML(
+        "afterbegin",
+        `<div class="sealcard"> 
+    <h2 class="sealcardname"> ${seal.names} </h2>
+    <img class="sealcardimg" src="${seal.img}">
+     <p class ="sealcardtext"> Species: ${seal.species}</p>
+     <p class ="sealcardtext"> Age: ${seal.age} </p>
+     <p class ="sealcardtext"> Weight: ${seal.weight}lbs </p>
+     <p class ="sealcardtext"> Gender: ${seal.gender} </p>
+     <p class ="sealcardtext"> Angry? ${seal.hostile} </p>
+     <p class ="sealcardtext"> Stock: ${seal.stock} </p>
+     <h3 class ="sealcardtext"> $${seal.value}</h3>
+    </div>`
+      );
+    });
+}
+
+function makecardbyangry() {
+  seals
+    .filter((seal) => seal.hostile === "yes")
     .forEach((seal) => {
       DOMselectors.card.insertAdjacentHTML(
         "afterbegin",
@@ -138,8 +197,5 @@ seals
   .forEach((seal) => console.log(seal.names));
 console.log("=======================After Burger Seals=====================");
 /// // the great divider // ///
-
-const hamburger = seals.weight.map((yumme) => yumme * 1.5);
-console.log(hamburger);
 
 setupCounter(document.querySelector("#counter"));

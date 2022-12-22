@@ -138,6 +138,7 @@ button:focus-visible {
   width: 90vw;
   margin: 2rem auto;
 }
+
 .sealcard {
   display: flex;
   justify-content: space-around;

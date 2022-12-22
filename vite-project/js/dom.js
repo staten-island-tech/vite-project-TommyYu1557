@@ -4,7 +4,6 @@ const DOMselectors = {
   age: document.querySelector(".age"),
   angry: document.querySelector(".angry"),
   weight: document.querySelector(".weight"),
-  burger: document.querySelector(".burger"),
   holder: document.querySelector(".holder"),
   container: document.querySelector(".displayContainer"),
   card: document.querySelector(".card"),
@@ -17,6 +16,9 @@ const DOMselectors = {
   value: document.querySelector(".value"),
   stock: document.querySelector(".stock"),
   img: document.querySelector(".img"),
+  sealcard: document.querySelector(".sealcard"),
+  deault: document.querySelector(".default"),
+  buttons: document.querySelector(".buttons"),
 };
 
 export { DOMselectors };
