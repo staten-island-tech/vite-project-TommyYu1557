@@ -17,7 +17,7 @@ const DOMselectors = {
   stock: document.querySelector(".stock"),
   img: document.querySelector(".img"),
   sealcard: document.querySelector(".sealcard"),
-  deault: document.querySelector(".default"),
+  default: document.querySelector(".default"),
   buttons: document.querySelector(".buttons"),
 };
 

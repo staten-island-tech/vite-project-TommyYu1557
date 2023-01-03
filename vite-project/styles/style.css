@@ -64,7 +64,7 @@ h1 {
 }
 
 .card {
-  padding: 2em;
+  padding: 5em;
 }
 
 .card2 {
@@ -118,12 +118,24 @@ button:focus-visible {
   top: 1rem;
 }
 
+.sealshoppe {
+  place-items: center;
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  position: absolute;
+  font-size: 2.5rem;
+  top: 4.5rem;
+}
+
 .cool {
   background-color: rgb(105, 243, 243);
+  color: black;
 }
 
 .warm {
   background-color: rgb(206, 73, 73);
+  color: black
 }
 
 #buttons {
@@ -151,8 +163,8 @@ button:focus-visible {
   box-shadow: .7rem .7rem .38rem rgb(195, 195, 195);
   align-items: center;
   flex-direction: column;
-  width: 45vw;
-  height: 55vw;
+  width: 40vw;
+  height: 50vw;
   background-color: rgba(245, 245, 220, 0.836);
 }
 
@@ -181,5 +193,5 @@ button:focus-visible {
 .sealcardtext {
   flex-direction: column;
   font-size: 2rem;
-  padding-bottom: .8rem;
+  padding-bottom: .56rem;
 }

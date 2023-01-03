@@ -17,31 +17,41 @@ document.querySelector(".button1").addEventListener("click", function () {
 
 document.querySelector(".default").addEventListener("click", function () {
   DOMselectors.card.innerHTML = ``;
+  resetbuttonname();
+  DOMselectors.default.innerHTML = `CURRENT: Default`;
   makecard();
 });
 
 document.querySelector(".price").addEventListener("click", function () {
   DOMselectors.card.innerHTML = ``;
-  DOMselectors.price.innerHTML = `CURRENT`;
+  resetbuttonname();
+  DOMselectors.price.innerHTML = `CURRENT: $$$`;
   makecardbyprice();
 });
 
 document.querySelector(".age").addEventListener("click", function () {
   DOMselectors.card.innerHTML = ``;
+  resetbuttonname();
+  DOMselectors.age.innerHTML = `CURRENT: Age`;
   makecardbyage();
 });
 
 document.querySelector(".weight").addEventListener("click", function () {
   DOMselectors.card.innerHTML = ``;
+  resetbuttonname();
+  DOMselectors.weight.innerHTML = `CURRENT: Weight`;
   makecardbyweight();
 });
 
 document.querySelector(".angry").addEventListener("click", function () {
   DOMselectors.card.innerHTML = ``;
+  resetbuttonname();
+  DOMselectors.angry.innerHTML = `CURRENT: Anger`;
   makecardbyangry();
 });
 
 function resetbuttonname() {
+  DOMselectors.default.innerHTML = `Default`;
   DOMselectors.price.innerHTML = `Sort by $$$`;
   DOMselectors.age.innerHTML = `Sort by Age`;
   DOMselectors.weight.innerHTML = `Sort by Weight`;
@@ -132,7 +142,7 @@ function makecardbyweight() {
 
 function makecardbyangry() {
   seals
-    .filter((seal) => seal.hostile === "yes")
+    .filter((seal) => seal.hostile === "Yes")
     .forEach((seal) => {
       DOMselectors.card.insertAdjacentHTML(
         "afterbegin",
@@ -143,7 +153,7 @@ function makecardbyangry() {
      <p class ="sealcardtext"> Age: ${seal.age} </p>
      <p class ="sealcardtext"> Weight: ${seal.weight}lbs </p>
      <p class ="sealcardtext"> Gender: ${seal.gender} </p>
-     <p class ="sealcardtext"> Angry? ${seal.hostile} </p>
+     <p class ="sealcardtext"> Angry?: ${seal.hostile} </p>
      <p class ="sealcardtext"> Stock: ${seal.stock} </p>
      <h3 class ="sealcardtext"> $${seal.value}</h3>
     </div>`
